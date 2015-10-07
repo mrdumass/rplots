@@ -1,0 +1,28 @@
+# Plots Course Outline
+
+- Chapter 1 Introduction
+      - Exercise  1 - Video Exercise  - Introduction to Visualization in R
+      - Exercise  2 - Normal Exercise - Getting Data Ready to Plot
+      - Exercise  3 - Multiple Choice Exercise - Visualizations Available in Base R
+      - Exercise  4 - Video Exercise - What type of data to use with which Visualization
+      - Exercise  5 - Multiple Choice Exercise - Match the Data with the Plot
+      - Exercise  6 - Normal Exercise - Look at Data in a Table and Your First Plot
+      - Exercise  7 - Multiple Choice Exercise - What type of plot did R do?
+      - Exercise  8 - Normal Exercise - Look at the Data and make your Second Plot
+      - Exercise  9 - Multiple Choice Exercise - What Type of Plot did the R do this time?
+      - Exercise 10 - Video Exercise - Now it is time to make your visualizations on your own.
+ 
+- Chapter 3 Bar Plots and Dot Plots
+      - Exercise 1 - Video Exercise  - Everything you can do with a barplot
+      - Exercise 2 - Normal Exercise - Bar Plots Rotated, Axis or not and Rotate the Labels
+      - Exercise 3 - Normal Exercise - Make the Colorful Barplots
+      - Exercise 4 - Normal Exercise - Borders and Shading
+      - Exercise 5 - Normal Exercise - More
+
+- Chapter 2 Histograms and Density Charts
+
+- Chapter 4 Boxplots
+
+- Chapter 5  Line Charts and Scatter Plots
+
+- Chapter 6 Pie Charts

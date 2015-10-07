@@ -1,0 +1,168 @@
+---
+title: "Bar Plots and Dot Plots"
+author: "Kirk Mettler"
+date: "October 3, 2015"
+output: html_document
+
+--- type:VideoExercise aspect_ratio:62.5 xp:50
+## Everything you can do with a barplot
+
+*** =video_link
+
+```{r, eval =FALSE}
+//player.vimeo.com/video/107186497
+```
+
+*** =skills
+1
+
+--- type:NormalExercise xp:100
+## Bar Plots Rotated, Axis or not and Rotate the Labels
+
+This is where you start to take control over your plot. By default all plots are done with a vertical orientation, but you can rotate it 90 degrees into a horizontal orientation. You can also remove the axis borders. 
+
+
+*** =instructions
+- view the animal data set using head()
+- plot the animals using barplot
+- plot animals using barplot but rotate to horizontal by adding horiz = TRUE to the barplot() 
+- the labels need to be rotate add las = 1 to do that to to the previous plot
+- plot the same barplot without axises using the axes = FALSE.
+
+
+*** =hint
+Why would I ever give you a hint???
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+pet <- c("fish", "bird", "snake", "cat", "dog")
+data1 <- sample(pet, 10000, replace= TRUE, prob =c(1, 2, 3, 4, 5))
+data1 <- as.factor(data1)
+animals <- table(data1)
+
+```
+
+*** =sample_code
+```{r eval=FALSE}
+## look at the animals data set using head()
+
+## plot animals using barplot()
+
+## rotate that plot by adding horiz = TRUE to the barplot()
+
+## rotate the labels by adding the las=1 to previous barplot()
+
+## remove the axis by adding the axes = FALSE to the previous barplot
+```
+
+*** =solution
+```{r eval=FALSE}
+## look at the animals data set using summary()
+summary(animals)
+## plot animals using barplot()
+barplot(animals)
+## rotate that plot by adding horiz = TRUE to the barplot()
+barplot(animals, horiz = TRUE)
+## rotate the labels by adding the las=1 to previous barplot()
+barplot(animals, horiz = TRUE, las =1)
+## remove the axis by adding the axes = FALSE to the previous barplot
+barplot(animals, horiz = TRUE, las = 1, axes = FALSE)
+```
+
+*** =sct
+```{r eval=FALSE}
+test_error()
+test_object("x",undefined_msg = "Have you defined the variable <code>x</code>?", incorrect_msg = "Make sure you assign the variable <code>x</code> correctly!")
+success_msg("Good job! Head over to the next exercise")
+```
+
+*** =skills
+1
+
+
+--- type:NormalExercise xp:100
+## Add some Color to Bar Plot
+
+Colors and shading make plots look more professional. They are fairly easy to add and just make things look better
+
+
+*** =instructions
+- Make a barplot of animals
+- Add color to the same plot by making the bar Yellow
+- Make a vector of colors "red", "green", "blue", "yellow","brown" called my_colors
+- redo the barplot of animals setting col = my_colors
+- add shading to the barplot using 
+
+*** =hint 
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+pet <- c("fish", "bird", "snake", "cat", "dog")
+data1 <- sample(pet, 10000, replace= TRUE, prob =c(1, 2, 3, 4, 5))
+data1 <- as.factor(data1)
+animals <- table(data1)
+```
+
+*** =sample_code
+```{r eval=FALSE}
+## Use barplot() with animals dataset
+
+## Does the same barplot but add col = "yellow"
+
+## make a vector my_colors with "red","green","blue","yellow" and "brown"
+
+## redo the barplot with col = my_colors
+```
+
+*** =solution
+```{r eval=FALSE}
+
+```
+
+*** =sct
+```{r eval=FALSE}
+test_error()
+test_object("x",undefined_msg = "Have you defined the variable <code>x</code>?", incorrect_msg = "Make sure you assign the variable <code>x</code> correctly!")
+success_msg("Good job! Head over to the next exercise")
+```
+
+*** =skills
+1
+
+
+--- type:NormalExercise xp:100
+## Borders and Shading a Box Plot
+
+Sometimes it improves the bar plot to have shading. So in the exercise you are going to do some plots with the borders turned on and off. You are also going to add shading and adjust the density,angle and color of that shading.
+
+
+*** =instructions
+- Make a bar plot using barplot(sort(animals)) set with col ="yellow" with borders = NA
+- Now do the same bar plot by with borders ="blue" and density = c(10,20,40,60,80)
+
+*** =hint 
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+*** =sample_code
+```{r eval=FALSE}
+
+```
+
+*** =solution
+```{r eval=FALSE}
+
+```
+
+*** =sct
+```{r eval=FALSE}
+test_error()
+test_object("x",undefined_msg = "Have you defined the variable <code>x</code>?", incorrect_msg = "Make sure you assign the variable <code>x</code> correctly!")
+success_msg("Good job! Head over to the next exercise")
+```
+
+*** =skills
+1

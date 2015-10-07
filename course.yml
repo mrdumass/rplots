@@ -1,0 +1,8 @@
+id: 743
+title: Visualizations Using Base R Graphics
+author_field: Kirk Mettler
+description: Essential Graphics
+chapters:
+  chapter1.Rmd: 1743
+  chapter2.Rmd: 1759
+

@@ -1,0 +1,348 @@
+---
+title_meta  : Chapter 1
+title       : Introduction to R Graphics
+description : What Plots can you do in base R?
+
+--- type:VideoExercise aspect_ratio:62.5 xp:50
+## Introduction to Visualizations in R
+
+*** =video_link
+
+```{r, eval =FALSE}
+//player.vimeo.com/video/107186497
+```
+
+*** =skills
+1
+
+---type:NormalExercise xp:100
+## Getting Data ready to Plot
+
+Often Data is not in the proper format to be plotted. This can be the case because of how the data was read into R or the work that the data scientist has been doing with that data. In general data should be in either a factor, integer, numeric or date format to be used. Usually which format is best is up to the Data Scientist. It is not usual that the first time you try to plot some data you get an error because the data is in a "character format" instead of something usable.
+
+*** =instructions
+- Look at data1 using the summary()
+- Indentify the column data that needs to be changed. Change that column into factors using the as.factor() command
+- Look at data2 using summary
+- make them the same type so a plot of the data would make sense.
+
+*** =hint
+Convert the second column to a numeric
+
+*** =pre_exercise_code
+```{r, eval=FALSE}
+### make data1
+set.seed(6511)
+pet<-c("fish","bird","snake","cat","dog")
+data1<-sample(pet,10000,replace= TRUE,prob =c(1,2,3,4,5))
+### make data2
+group1 <- rnorm(1000, mean = 5, sd = 1)
+group2 <- rnorm(1000, mean = 7, sd = 2)
+data2 <- data.frame(group1,group2)
+data2$group2 <- as.character(data2$group2)
+```
+*** =sample_code
+```{r eval=FALSE}
+## look at the data in data1 using summary
+summary(name_here)
+
+## Convert the data to  factors
+name_here <- as.factor(name_here)
+
+## Look at the data in data2 using summary
+
+## Convert one of the columns in data2 so they are both numeric
+```
+
+***=solution
+```{r eval =FALSE}
+## look at the data in data1 using summary
+summary(data1)
+
+## Convert the data in the Column to a factors
+data1$animals <- as.factor(data1)
+
+## Look at the data in data2 using summary
+summary(data2)
+
+## Convert one of the columns in data2 so they are both numeric
+data2$group2 <- as.numeric(data2$group2)
+```
+
+***=sct
+```{r eval=FALSE}
+##need help here
+success_msg("You nailed it! Now lets look at the plots we can do in base R")
+```
+
+***=skills
+1
+
+---type:MultipleChoiceExercise xp:50
+## Visualizations Available in Base R
+
+Base R contains a number of powerful visualizations. From the list below select the one that
+is not among them.
+
+*** =instructions
+- Boxplot
+- Histogram
+- Scatter Plot
+- Pie Chart
+- Bar Chart
+- Lyft Chart
+
+*** =hint
+you can't be taken for a ride using base R graphics.
+
+*** =pre_exercise_code
+```{r eval =FALSE}
+## You do not need to write any code for this exercise
+```
+
+*** =sct
+```{r,eval = FALSE}
+msg1 = "Try again!"
+msg2 = "Not the right choice"
+msg3 = "Wrong."
+msg4 = "No, R has Pie Charts but I recommend using Bar Charts instead."
+msg5 = "No, R comes with Bar Charts."
+msg6 = "Correct, while some people use Lyft Charts they are not in base R."
+test_mc(correct = 6, feedback_msgs = c(msg1,msg2,msg3,msg4,msg5,msg6))
+```
+
+***=skills
+3
+
+--- type:VideoExercise aspect_ratio:62.5 xp:50
+## What type of data to use with which Visualization
+
+*** =video_link
+
+```{r, eval =FALSE}
+//player.vimeo.com/video/107186497
+```
+
+*** =skills
+1
+
+---type:MultipleChoiceExercise xp:50
+## Which Plot for which Dataset
+
+Now that you have have a basic understanding of what types of Visualiation can be done 
+in base R. It is time to demostrate that you can identify which dataset should be be visualized with which plot. There are four dataset loaded in the R session. Look at the data to figure out which plot. The datasets are data1 and data2
+
+*** =instructions
+- data1 = histogram, data2 =boxplot
+- data1 = barplot, data2 =scatter plot
+- data1 = histogram, data2 =barplot
+- data1 = barplot, data2 =boxplot
+
+*** =hint
+histograms use only numeric data
+
+*** =pre_exercise_code
+```{r, eval =FALSE}
+### Make a factor dataset
+set.seed(6511)
+pet <- c("fish", "bird", "snake", "cat", "dog")
+data1 <- sample(pet, 10000, replace= TRUE, prob =c(1, 2, 3, 4, 5))
+data1 <- as.factor(data1)
+### Make a two normal distribution data set
+group1 < -rnorm(1000, mean = 5, sd = 1)
+group2 <- rnorm(1000, mean = 7, sd = 2)
+data2 <- data.frame(group1,group2)
+data2$group2 <- as.character(data2$group2)
+```
+
+
+*** =sct
+```{r,eval = FALSE}
+msg1 = "Try again!"
+msg2 = "Not the right choice"
+msg3 = "So close."
+msg4 = "Excellent Work! I know you did not just guess."
+test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
+```
+
+*** =skills
+3
+
+---type:NormalExercise xp:100
+## Look at Data in a Table and then in a Plot
+
+Plots are just another way to look at data. They are very helpful when the data gets large because it allows the Data Scientist to step back a little bit from the data and get an idea what is going on from a higher level perspective. Here we are going to visualize the data in table and plot format. When doing the plot we are going to take advantage of the fact that R takes what you give it and takes to make it work.
+
+***=instructions
+- Use data1 which is already loaded here and view is using the summmary() and str() function
+- Now look at the same data using the table() command
+- Now it is time to do your first plot. Plot the data1 using the plot() function
+- Now look at plot using barplot(table(data1))
+
+***=hint
+No hint for YOU!!!
+
+***=pre_exercise_code
+```{r eval = FALSE}
+set.seed(6511)
+pet <- c("fish","bird","snake","cat","dog")
+data1 <- sample(pet,10000,replace= TRUE,prob =c(1,2,3,4,5))
+data1 <- as.factor(data1)
+```
+
+***=sample_code
+```{r eval - FALSE}
+## Get a summary of data1
+
+## Look at the str of data
+
+## make a table of the data1
+
+## Plot data1 
+
+## Plot the data using barplot(table())
+```
+
+***=solution
+```{r eval = FALSE}
+## Get a summary of the Pets data set
+summary(data1)
+## Look at the str of the Pets data set
+str(data1)
+## make a table of the Pets data set
+table(data1)
+## Plot the Pets data
+plot(data1)
+## Plot the data using barplot(table())
+barplot(table(data1))
+```
+
+***=sct
+```{r eval=FALSE}
+success_msg("Awesome job! You should teach this Course. Notice that the two plot are the same. The difference is that in the sencord plot you controlled what was done.")
+```
+
+***=skills
+1
+
+--- type:MultipleChoiceExercise xp:50
+## What Type of Plot did the R do
+
+So the good news is that sometimes if you just use plot() R will do a plot that is informative which it did in this case. What kind of plot did R do?
+
+*** =instructions
+- Histogram
+- Barplot
+- Pie Chart
+- Scatter plot
+
+*** =hint
+Here's a hint: There is no Pie in this Box.
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# pre exercise code comes here
+```
+
+*** =sct
+```{r,eval=FALSE}
+msg1 = "Try again! Histograms only hae numeric components."
+msg2 = "You are Awesome!"
+msg3 = "That plot was not a Pie Chart"
+msg4 = "Try Again. A scatter plot would be a bunch of dots."
+test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
+```
+
+*** =skills
+3
+
+---type:NormalExercise xp:100
+## Look at the Second Data set in a Table and then Make YOur Second Plot
+
+This worked the first time so lets try it again. Just like we did with the first data set.
+
+***=instructions
+- Use data2 which is already loaded here and view is using the summmary() and str() function
+- Now look at the same data using the table() command
+- Now it is time to do your second plot. Plot the data1 using the plot() function
+
+***=hint
+No hint for YOU!!!
+
+***=pre_exercise_code
+```{r eval = FALSE}
+### Make a two normal distribution data set
+group1 <- rnorm(1000, mean = 5, sd = 1)
+group2 <- rnorm(1000, mean = 7, sd = 2)
+data2 <- data.frame(group1, group2)
+```
+
+***=sample_code
+```{r eval - FALSE}
+## Get a summary of data2
+
+## Look at the str of data2
+
+## Plot data2
+```
+
+***=solution
+```{r eval = FALSE}
+## Get a summary of data2
+summary(data2)
+## Look at the str of data2
+str(data2)
+## Plot the data2
+plot(data2)
+```
+
+***=sct
+```{r eval=FALSE}
+success_msg("Good job. It is important to remember that sometimes good work does not yield good results. This is why you need to take control of what kind of plot R does with the data you give it.")
+```
+
+***=skills
+1
+
+--- type:MultipleChoiceExercise xp:50
+## What Type of Plot did the R do this time?
+
+So the bad news is that sometimes if you just use plot() R will do a plot that is not informative which it did in this case. What kind of plot did R do.
+
+*** =instructions
+- Histogram
+- Boxplot
+- Pie Chart
+- Scatter plot
+
+*** =hint
+Here's a hint: There is no Pie in this Scattered Mess.
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# pre exercise code comes here
+```
+
+*** =sct
+```{r,eval=FALSE}
+msg1 = "Try again! Histograms only have numeric components."
+msg2 = "There are no boxes plotted here."
+msg3 = "That plot was not a Pie Chart"
+msg4 = "Correct. A scatter plot is a bunch of dots."
+test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
+```
+
+*** =skills
+3
+
+--- type:VideoExercise aspect_ratio:62.5 xp:50
+## Now it is time to make your visualizations on your own.
+
+***= video_link
+
+```{r, eval =FALSE}
+## video address
+```
+
+*** =skills
+1

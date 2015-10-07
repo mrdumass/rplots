@@ -1,0 +1,36 @@
+
+--- type:NormalExercise xp:100
+## Interactive Exercise Title
+
+This block of text is the assignment.
+
+
+*** =instructions
+
+
+*** =hint 
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+*** =sample_code
+```{r eval=FALSE}
+
+```
+
+*** =solution
+```{r eval=FALSE}
+
+```
+
+*** =sct
+```{r eval=FALSE}
+test_error()
+test_object("x",undefined_msg = "Have you defined the variable <code>x</code>?", incorrect_msg = "Make sure you assign the variable <code>x</code> correctly!")
+success_msg("Good job! Head over to the next exercise")
+```
+
+*** =skills
+1
